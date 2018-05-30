@@ -1,0 +1,10 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "strictNullChecks": true,
+    "outDir": "dist/",
+    "module": "commonjs",
+    "declaration": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "statuscakejs",
+  "version": "0.0.1",
+  "description": "Facilitates use of the StatusCake API.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prepublish": "npm run build"
+  },
+  "author": "Charlie Saunders<charlieasaunders@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/request-promise-native": "^1.0.14",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "dotenv": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.7.2"
+  }
+}
