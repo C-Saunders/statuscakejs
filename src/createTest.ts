@@ -3,6 +3,7 @@ import {
   TestCreationOptions,
   TestType
 } from './sharedTypes'
+import { StatusCake } from './StatusCake'
 
 export interface TestCreateResponse {
   Success: boolean,
@@ -19,8 +20,8 @@ export interface TestCreateResponse {
   InsertID: number
 }
 
-export async function createTest (StatusCake, options: TestCreationOptions): Promise<TestCreateResponse | StatusCakeError> {
-  return StatusCake('https://app.statuscake.com/API/Tests/Update', {
+export async function createTest (statusCake: StatusCake, options: TestCreationOptions): Promise<TestCreateResponse | StatusCakeError> {
+  return statusCake.request('https://app.statuscake.com/API/Tests/Update', {
     method: 'PUT',
     form: options
   })

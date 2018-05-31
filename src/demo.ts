@@ -1,4 +1,4 @@
-import * as request from 'request-promise-native'
+import { StatusCake } from './StatusCake'
 import { getTests } from './getTests'
 import { getTestDetails } from './getTestDetails'
 import { getContactGroups } from './getContactGroups'
@@ -9,28 +9,21 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const StatusCake = request.defaults({
-  method: 'GET',
-  headers: {
-    API: process.env.API,
-    username: process.env.username
-  },
-  json: true
-})
+const statusCake = new StatusCake(process.env.username as string, process.env.API as string)
 
-getTests(StatusCake).then(data => console.log(JSON.stringify(data)))
+getTests(statusCake).then(data => console.log(JSON.stringify(data)))
 
-getTestDetails(StatusCake, 3201442).then(data => console.log(JSON.stringify(data)))
+getTestDetails(statusCake, 3201442).then(data => console.log(JSON.stringify(data)))
 
-getContactGroups(StatusCake).then(data => console.log(JSON.stringify(data)))
+getContactGroups(statusCake).then(data => console.log(JSON.stringify(data)))
 
-updateTest(StatusCake, {
+updateTest(statusCake, {
   TestID: 3201442,
   ContactGroup: '113946',
   CheckRate: 3602
 }).then(data => console.log(JSON.stringify(data)))
 
-createTest(StatusCake, {
+createTest(statusCake, {
   CheckRate: 3600,
   TestType: TestType.HTTP,
   WebsiteName: 'Created Example',

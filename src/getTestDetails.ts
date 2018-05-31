@@ -1,4 +1,5 @@
 import { StatusCakeError } from './sharedTypes'
+import { StatusCake } from './StatusCake'
 
 export interface TestDetails {
   CheckRate: number,
@@ -43,8 +44,8 @@ export interface TestDetails {
   WebsiteName: string
 }
 
-export async function getTestDetails (StatusCake, TestID: number): Promise<TestDetails | StatusCakeError> {
-  return StatusCake('https://app.statuscake.com/API/Tests/Details/', {
+export async function getTestDetails (statusCake: StatusCake, TestID: number): Promise<TestDetails | StatusCakeError> {
+  return statusCake.request('https://app.statuscake.com/API/Tests/Details/', {
     qs: { TestID }
   })
 }

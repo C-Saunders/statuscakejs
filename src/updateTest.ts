@@ -2,6 +2,7 @@ import {
   TestUpdateOptions,
   StatusCakeError
 } from './sharedTypes'
+import { StatusCake } from './StatusCake'
 
 export interface TestUpdateResponse {
   Issues: Array<any> | object,
@@ -9,8 +10,8 @@ export interface TestUpdateResponse {
   Message: string
 }
 
-export async function updateTest (StatusCake, options: TestUpdateOptions): Promise<TestUpdateResponse | StatusCakeError> {
-  return StatusCake('https://app.statuscake.com/API/Tests/Update', {
+export async function updateTest (statusCake: StatusCake, options: TestUpdateOptions): Promise<TestUpdateResponse | StatusCakeError> {
+  return statusCake.request('https://app.statuscake.com/API/Tests/Update', {
     method: 'PUT',
     form: options
   })

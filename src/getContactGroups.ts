@@ -1,4 +1,5 @@
 import { StatusCakeError } from './sharedTypes'
+import { StatusCake } from './StatusCake'
 
 export interface ContactGroup {
   GroupName: string,
@@ -11,6 +12,6 @@ export interface ContactGroup {
   PingURL: string
 }
 
-export async function getContactGroups (StatusCake): Promise<Array<ContactGroup> | StatusCakeError> {
-  return StatusCake('https://app.statuscake.com/API/ContactGroups/')
+export async function getContactGroups (statusCake: StatusCake): Promise<Array<ContactGroup> | StatusCakeError> {
+  return statusCake.request('https://app.statuscake.com/API/ContactGroups/')
 }

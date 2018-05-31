@@ -2,6 +2,7 @@ import {
   StatusCakeError,
   TestType
 } from './sharedTypes'
+import { StatusCake } from './StatusCake'
 
 export interface Test {
   TestID: number,
@@ -19,6 +20,6 @@ export interface Test {
   Uptime: number
 }
 
-export async function getTests (StatusCake): Promise<Array<Test> | StatusCakeError> {
-  return StatusCake('https://app.statuscake.com/API/Tests/')
+export async function getTests (statusCake: StatusCake): Promise<Array<Test> | StatusCakeError> {
+  return statusCake.request('https://app.statuscake.com/API/Tests/')
 }
