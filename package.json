@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "author": "Charlie Saunders<charlieasaunders@gmail.com>",
   "license": "MIT",
