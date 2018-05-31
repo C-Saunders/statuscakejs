@@ -6,7 +6,8 @@
     "type": "git",
     "url": "https://github.com/C-Saunders/statuscakejs"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json",
