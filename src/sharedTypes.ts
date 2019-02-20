@@ -43,6 +43,23 @@ export interface TestUpdateOptions extends BaseTestOptions {
   TestID: number
 }
 
+export interface ContactGroup {
+  GroupName: string
+  Emails: Array<string>
+  Mobiles: string
+  Boxcar: string
+  Pushover: string
+  ContactID: number
+  DesktopAlert: string
+  PingURL: string
+}
+
+export type PartialContactGroup = Partial<ContactGroup>
+
+export interface ContactGroupCreationOptions extends PartialContactGroup {
+  ContactID: number
+}
+
 export interface StatusCakeError {
   ErrNo: number,
   Error: string
