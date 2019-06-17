@@ -1,7 +1,12 @@
-import { StatusCakeError, ContactGroup, ContactGroupCreationOptions } from './sharedTypes'
+import {
+  StatusCakeError,
+  ContactGroup,
+  ContactGroupCreationOptions,
+  ContactGroupUpdateOptions,
+} from './sharedTypes'
 import { StatusCake } from './StatusCake'
 
-export async function createContactGroup (statusCake: StatusCake, options: ContactGroupCreationOptions): Promise<Array<ContactGroup> | StatusCakeError> {
+export async function createUpdateContactGroup(statusCake: StatusCake, options: ContactGroupCreationOptions | ContactGroupUpdateOptions): Promise<Array<ContactGroup> | StatusCakeError> {
   const optionsClone: any = Object.assign({}, options)
 
   if (options.Emails) {

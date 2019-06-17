@@ -57,6 +57,10 @@ export interface ContactGroup {
 export type PartialContactGroup = Partial<ContactGroup>
 
 export interface ContactGroupCreationOptions extends PartialContactGroup {
+  GroupName: string
+}
+
+export interface ContactGroupUpdateOptions extends PartialContactGroup {
   ContactID: number
 }
 
