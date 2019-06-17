@@ -1,7 +1,7 @@
 {
   "name": "statuscakejs",
-  "version": "0.0.3",
-  "description": "Facilitates use of the StatusCake API.",
+  "version": "0.0.4",
+  "description": "Fcilitates use of the StatusCake API.",
   "repository": {
     "type": "git",
     "url": "https://github.com/C-Saunders/statuscakejs"
